@@ -8,7 +8,7 @@ $repo=urlencode(@$_REQUEST['repo']);
 $user=urlencode(@$_REQUEST['user']);
 $pass=urlencode(@$_REQUEST['pass']);
 // decompress from gz
-$data=json_decode(file_get_contents("http://theappbin.com/deploy/deploy_zip.php?key=$_GET[key]&pass=$pass&user=$user&repo=$repo"),1);
+$data=json_decode(file_get_contents("http://sample-server.with/git/and/shell/access/deploy_zip.php?key=$_GET[key]&pass=$pass&user=$user&repo=$repo"),1);
 echo $data['output'];
 copy($data['url'],'deploy.tar.gz');
 $p = new PharData('deploy.tar.gz');
